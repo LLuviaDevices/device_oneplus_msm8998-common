@@ -14,6 +14,6 @@ LOCAL_C_INCLUDES := \
 LOCAL_SRC_FILES := recovery_updater.cpp
 LOCAL_MODULE := librecovery_updater_oneplus
 LOCAL_MODULE_TAGS := eng
-
+LOCAL_STATIC_LIBRARIES := libedify libotautil libupdater
 include $(BUILD_STATIC_LIBRARY)
 
