@@ -155,7 +155,7 @@ DTS_CODEC_M_ := false
 
 AUDIO_USE_LL_AS_PRIMARY_OUTPUT := true
 
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 0
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
@@ -208,14 +208,16 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Enable dexpreopt to speed boot time
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    ifeq ($(WITH_DEXPREOPT),)
-      WITH_DEXPREOPT := true
-      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
-    endif
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+#  ifneq ($(TARGET_BUILD_VARIANT),eng)
+#    ifeq ($(WITH_DEXPREOPT),)
+#      WITH_DEXPREOPT := true
+#      WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+#    endif
+#  endif
+#endif
+
+WITH_DEXPREOPT := false
 
 # Filesystem
 TARGET_FS_CONFIG_GEN += $(PLATFORM_PATH)/config.fs
